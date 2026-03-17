@@ -157,17 +157,26 @@ export default function Home() {
       </nav>
 
       {/* ── HERO SPLIT ── */}
-      <section className="flex h-screen">
-        {/* Venstre: tekst */}
-        <div className="w-1/2 flex flex-col justify-end px-12 pb-20 pt-24" style={{ backgroundColor: "#faf6ef" }}>
+      <section className="flex flex-col md:flex-row md:h-screen">
+        {/* Bilde: topp på mobil, høyre på desktop */}
+        <div className="w-full md:w-1/2 md:order-2 overflow-hidden" style={{ height: "50vw", maxHeight: "100vh", minHeight: "260px" }}>
+          <img
+            src="/Foto/herbs.JPG"
+            alt="Urter"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Tekst: under på mobil, venstre på desktop */}
+        <div className="w-full md:w-1/2 md:order-1 flex flex-col justify-end px-8 md:px-12 pb-12 md:pb-20 pt-8 md:pt-24" style={{ backgroundColor: "#faf6ef" }}>
           <h1
-            className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-8"
+            className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6 md:mb-8"
             style={{ color: "#2c2318", fontFamily: "var(--font-inter)" }}
           >
             Ni unike marinader for fisk og kjøtt
           </h1>
           <p
-            className="text-base leading-relaxed mb-10 max-w-sm"
+            className="text-base leading-relaxed mb-8 md:mb-10 max-w-sm"
             style={{ color: "#5c4a35", fontFamily: "var(--font-inter)", fontWeight: 300 }}
           >
             Inspirert av verdensmat og forankret i håndverk. Laget for å løfte smaken til nye høyder.
@@ -181,15 +190,6 @@ export default function Home() {
           >
             → Les mer om oss
           </a>
-        </div>
-
-        {/* Høyre: bilde */}
-        <div className="w-1/2 overflow-hidden">
-          <img
-            src="/Foto/herbs.JPG"
-            alt="Urter"
-            className="w-full h-full object-cover"
-          />
         </div>
       </section>
 
