@@ -82,11 +82,11 @@ export default function OmOss() {
         {/* Blokk 2: Video full bredde */}
         <div className="w-full overflow-hidden mb-24" style={{ height: "clamp(220px, 44vw, 600px)" }}>
           <video
-            src="/Video/Fiskedisk.mp4"
+            src="/Video/Fiskedisk-h264.mp4"
             loop
             playsInline
             controls
-            poster="/Foto/fisk-trebrett.JPG"
+            poster="/Foto/fiskedisk-poster.jpg"
             style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
           />
         </div>
