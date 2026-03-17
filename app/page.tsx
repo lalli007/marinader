@@ -183,14 +183,11 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Høyre: video */}
+        {/* Høyre: bilde */}
         <div className="w-1/2 overflow-hidden">
-          <video
-            src="/Video/Fiskedisk.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
+          <img
+            src="/Foto/herbs.JPG"
+            alt="Urter"
             className="w-full h-full object-cover"
           />
         </div>

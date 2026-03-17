@@ -1,6 +1,38 @@
 export default function OmOss() {
   return (
     <main className="min-h-screen" style={{ backgroundColor: "#faf6ef" }}>
+
+      {/* ── NAVBAR ── */}
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5" style={{ backgroundColor: "#faf6ef" }}>
+        <div className="flex items-center gap-10">
+          <a href="/" className="text-lg font-semibold tracking-tight" style={{ color: "#2c2318", fontFamily: "var(--font-inter)" }}>
+            Marinader
+          </a>
+          <div className="hidden md:flex items-center gap-8">
+            {[{ label: "Om oss", href: "/om-oss" }, { label: "Produkter", href: "/#marinader" }, { label: "Kontakt", href: "/#kontakt" }].map(({ label, href }) => (
+              <a key={label} href={href} className="text-sm transition-colors duration-200" style={{ color: "#7c5c2e", fontFamily: "var(--font-inter)" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#2c2318")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#7c5c2e")}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </div>
+        <a
+          href="/"
+          className="inline-flex items-center gap-2 text-sm transition-colors duration-200"
+          style={{ color: "#7c5c2e", fontFamily: "var(--font-inter)" }}
+          onMouseEnter={e => (e.currentTarget.style.color = "#2c2318")}
+          onMouseLeave={e => (e.currentTarget.style.color = "#7c5c2e")}
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+          </svg>
+          Tilbake
+        </a>
+      </nav>
+
       {/* ── HEADER ── */}
       <section className="px-6 pt-24 pb-16 text-center" style={{ backgroundColor: "#faf6ef" }}>
         <div className="max-w-3xl mx-auto">
@@ -103,23 +135,6 @@ export default function OmOss() {
 
       </section>
 
-      {/* ── TILBAKE ── */}
-      <div className="px-6 pb-16 max-w-4xl mx-auto">
-        <a
-          href="/"
-          className="inline-flex items-center gap-2 px-6 py-3 text-sm tracking-widest uppercase transition-all duration-300"
-          style={{
-            fontFamily: "var(--font-inter)",
-            border: "1px solid #c4a882",
-            color: "#7c5c2e",
-          }}
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
-          </svg>
-          Tilbake
-        </a>
-      </div>
 
       {/* ── FOOTER ── */}
       <footer className="px-6 py-8 text-center" style={{ borderTop: "1px solid #e0d5c5" }}>
