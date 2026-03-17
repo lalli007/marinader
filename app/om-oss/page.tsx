@@ -87,7 +87,10 @@ export default function OmOss() {
             muted
             loop
             playsInline
-            className="w-full h-full object-cover"
+            preload="auto"
+            poster="/Foto/fisk-trebrett.JPG"
+            className="w-full object-cover"
+            style={{ width: "100%", height: "100%", display: "block" }}
           />
         </div>
 
