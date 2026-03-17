@@ -15,10 +15,9 @@ export default function OmOss() {
   }, []);
 
   function handlePlay() {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setPlaying(true);
-    }
+    const video = videoRef.current;
+    if (!video) return;
+    video.play().then(() => setPlaying(true)).catch(() => {});
   }
   return (
     <main className="min-h-screen" style={{ backgroundColor: "#faf6ef" }}>
@@ -104,6 +103,7 @@ export default function OmOss() {
             ref={videoRef}
             src="/Video/Fiskedisk.mp4"
             loop
+            muted
             playsInline
             preload="metadata"
             style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
