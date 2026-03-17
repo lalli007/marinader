@@ -98,7 +98,6 @@ export default function OmOss() {
             loop
             playsInline
             preload="auto"
-            poster="/Foto/fisk-trebrett.JPG"
             style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
           />
           {!playing && (
