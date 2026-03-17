@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const auth = request.cookies.get('auth')?.value
 
   if (auth === process.env.AUTH_SECRET) {

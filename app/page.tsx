@@ -135,42 +135,64 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen">
-      {/* ── VIDEO ── */}
-      <section className="relative w-full overflow-hidden" style={{ maxHeight: "60vh" }}>
-        <video
-          src="/Video/Fiskedisk.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full object-cover"
-          style={{ maxHeight: "60vh" }}
-        />
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          <h1
-            className="text-6xl md:text-8xl font-semibold text-stone-100 leading-tight drop-shadow-lg"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
+    <main className="min-h-screen" style={{ backgroundColor: "#faf6ef" }}>
+
+      {/* ── NAVBAR ── */}
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5" style={{ backgroundColor: "#faf6ef" }}>
+        <div className="flex items-center gap-10">
+          <span className="text-lg font-semibold tracking-tight" style={{ color: "#2c2318", fontFamily: "var(--font-inter)" }}>
             Marinader
+          </span>
+          <div className="hidden md:flex items-center gap-8">
+            {[{ label: "Om oss", href: "/om-oss" }, { label: "Produkter", href: "#marinader" }, { label: "Kontakt", href: "#kontakt" }].map(({ label, href }) => (
+              <a key={label} href={href} className="text-sm transition-colors duration-200" style={{ color: "#7c5c2e", fontFamily: "var(--font-inter)" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#2c2318")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#7c5c2e")}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {/* ── HERO SPLIT ── */}
+      <section className="flex h-screen">
+        {/* Venstre: tekst */}
+        <div className="w-1/2 flex flex-col justify-end px-12 pb-20 pt-24" style={{ backgroundColor: "#faf6ef" }}>
+          <h1
+            className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-8"
+            style={{ color: "#2c2318", fontFamily: "var(--font-inter)" }}
+          >
+            Ni unike marinader for fisk og kjøtt
           </h1>
           <p
-            className="text-lg md:text-xl text-stone-300 max-w-lg leading-relaxed mt-6 drop-shadow"
-            style={{ fontFamily: "var(--font-inter)", fontWeight: 300 }}
+            className="text-base leading-relaxed mb-10 max-w-sm"
+            style={{ color: "#5c4a35", fontFamily: "var(--font-inter)", fontWeight: 300 }}
           >
-            Ni unike marinader — laget for å løfte smaken av fisk og kjøtt til nye høyder.
+            Inspirert av verdensmat og forankret i håndverk. Laget for å løfte smaken til nye høyder.
           </p>
           <a
             href="/om-oss"
-            className="mt-8 inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 hover:border-white/50 text-stone-100 px-8 py-3 text-sm tracking-widest uppercase transition-all duration-300"
-            style={{ fontFamily: "var(--font-inter)" }}
+            className="inline-flex items-center gap-2 self-start px-6 py-3 rounded-full text-sm transition-all duration-200"
+            style={{ border: "1px solid #2c2318", color: "#2c2318", fontFamily: "var(--font-inter)" }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#2c2318"; (e.currentTarget as HTMLAnchorElement).style.color = "#faf6ef"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; (e.currentTarget as HTMLAnchorElement).style.color = "#2c2318"; }}
           >
-            Les mer om oss
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            → Les mer om oss
           </a>
+        </div>
+
+        {/* Høyre: video */}
+        <div className="w-1/2 overflow-hidden">
+          <video
+            src="/Video/Fiskedisk.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          />
         </div>
       </section>
 
@@ -179,14 +201,14 @@ export default function Home() {
       <section id="marinader" className="px-6 py-24 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2
-            className="text-4xl md:text-5xl font-semibold text-stone-100 mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
+            className="text-4xl md:text-5xl font-semibold mb-4"
+            style={{ fontFamily: "var(--font-playfair)", color: "#2c2318" }}
           >
             Våre marinader
           </h2>
           <p
-            className="text-stone-500 text-base max-w-md mx-auto mb-8"
-            style={{ fontFamily: "var(--font-inter)", fontWeight: 300 }}
+            className="text-base max-w-md mx-auto mb-8"
+            style={{ fontFamily: "var(--font-inter)", fontWeight: 300, color: "#5c4a35" }}
           >
             Filtrer etter hva du skal tilberede
           </p>
@@ -199,9 +221,9 @@ export default function Home() {
                 className={`px-6 py-2 text-sm tracking-widest uppercase transition-all duration-200 ${
                   filter === cat
                     ? "bg-amber-800 text-amber-100 border border-amber-700"
-                    : "border border-stone-800 text-stone-500 hover:border-stone-600 hover:text-stone-300"
+                    : "border border-stone-300 hover:border-amber-700"
                 }`}
-                style={{ fontFamily: "var(--font-inter)" }}
+                style={{ fontFamily: "var(--font-inter)", color: filter === cat ? undefined : "#7c5c2e" }}
               >
                 {cat}
               </button>
@@ -213,15 +235,17 @@ export default function Home() {
           {filtered.map((m) => (
             <div
               key={m.id}
-              className="group border border-stone-800 hover:border-stone-600 overflow-hidden"
-              style={{ transition: "border-color 0.3s, transform 0.3s, box-shadow 0.3s" }}
+              className="group overflow-hidden"
+              style={{ border: "1px solid #e0d5c5", transition: "border-color 0.3s, transform 0.3s, box-shadow 0.3s" }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)";
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 40px rgba(0,0,0,0.5)";
+                (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 40px rgba(0,0,0,0.12)";
+                (e.currentTarget as HTMLDivElement).style.borderColor = "#c4a882";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
                 (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
+                (e.currentTarget as HTMLDivElement).style.borderColor = "#e0d5c5";
               }}
             >
               {/* Colour plate */}
@@ -251,29 +275,29 @@ export default function Home() {
               </div>
 
               {/* Content */}
-              <div className="p-6 bg-stone-950">
+              <div className="p-6" style={{ backgroundColor: "#faf6ef" }}>
                 <p
                   className="text-xs tracking-widest uppercase mb-1"
-                  style={{ fontFamily: "var(--font-inter)", color: m.accent, opacity: 0.8 }}
+                  style={{ fontFamily: "var(--font-inter)", color: m.accent }}
                 >
                   {m.tagline}
                 </p>
                 <h3
-                  className="text-2xl font-semibold text-stone-100 mb-3"
-                  style={{ fontFamily: "var(--font-playfair)" }}
+                  className="text-2xl font-semibold mb-3"
+                  style={{ fontFamily: "var(--font-playfair)", color: "#2c2318" }}
                 >
                   {m.name}
                 </h3>
                 <p
-                  className="text-stone-500 text-sm leading-relaxed mb-5"
-                  style={{ fontFamily: "var(--font-inter)", fontWeight: 300 }}
+                  className="text-sm leading-relaxed mb-5"
+                  style={{ fontFamily: "var(--font-inter)", fontWeight: 300, color: "#5c4a35" }}
                 >
                   {m.description}
                 </p>
                 <div>
                   <p
-                    className="text-[10px] tracking-widest uppercase text-stone-600 mb-2"
-                    style={{ fontFamily: "var(--font-inter)" }}
+                    className="text-[10px] tracking-widest uppercase mb-2"
+                    style={{ fontFamily: "var(--font-inter)", color: "#b09878" }}
                   >
                     Ingredienser
                   </p>
@@ -281,8 +305,8 @@ export default function Home() {
                     {m.ingredients.map((ing) => (
                       <span
                         key={ing}
-                        className="text-xs px-2 py-0.5 bg-stone-900 text-stone-400 border border-stone-800"
-                        style={{ fontFamily: "var(--font-inter)" }}
+                        className="text-xs px-2 py-0.5"
+                        style={{ fontFamily: "var(--font-inter)", backgroundColor: "#f0e9de", color: "#7c5c2e", border: "1px solid #e0d5c5" }}
                       >
                         {ing}
                       </span>
@@ -297,7 +321,7 @@ export default function Home() {
 
       {/* ── DIVIDER ── */}
       <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-stone-800 to-transparent" />
+        <div className="h-px" style={{ background: "linear-gradient(to right, transparent, #c4a882, transparent)" }} />
       </div>
 
       {/* ── KONTAKT ── */}
@@ -314,14 +338,14 @@ export default function Home() {
             <div className="h-px w-12 bg-amber-800 opacity-60" />
           </div>
           <h2
-            className="text-4xl md:text-5xl font-semibold text-stone-100 mb-4"
-            style={{ fontFamily: "var(--font-playfair)" }}
+            className="text-4xl md:text-5xl font-semibold mb-4"
+            style={{ fontFamily: "var(--font-playfair)", color: "#2c2318" }}
           >
             Ta kontakt
           </h2>
           <p
-            className="text-stone-500 text-base max-w-md mx-auto"
-            style={{ fontFamily: "var(--font-inter)", fontWeight: 300 }}
+            className="text-base max-w-md mx-auto"
+            style={{ fontFamily: "var(--font-inter)", fontWeight: 300, color: "#5c4a35" }}
           >
             Spørsmål om produktene, grossistordrer eller samarbeid? Vi hører gjerne fra deg.
           </p>
@@ -336,23 +360,23 @@ export default function Home() {
             ].map(({ label, value }) => (
               <div key={label}>
                 <p
-                  className="text-xs tracking-widest uppercase text-stone-600 mb-1"
-                  style={{ fontFamily: "var(--font-inter)" }}
+                  className="text-xs tracking-widest uppercase mb-1"
+                  style={{ fontFamily: "var(--font-inter)", color: "#b09878" }}
                 >
                   {label}
                 </p>
                 <p
-                  className="text-stone-300 whitespace-pre-line"
-                  style={{ fontFamily: "var(--font-inter)" }}
+                  className="whitespace-pre-line"
+                  style={{ fontFamily: "var(--font-inter)", color: "#2c2318" }}
                 >
                   {value}
                 </p>
               </div>
             ))}
-            <div className="pt-4 border-t border-stone-900">
+            <div className="pt-4" style={{ borderTop: "1px solid #e0d5c5" }}>
               <p
-                className="text-stone-600 text-sm leading-relaxed"
-                style={{ fontFamily: "var(--font-inter)", fontWeight: 300 }}
+                className="text-sm leading-relaxed"
+                style={{ fontFamily: "var(--font-inter)", fontWeight: 300, color: "#b09878" }}
               >
                 Vi svarer normalt innen én virkedag.
               </p>
@@ -360,22 +384,22 @@ export default function Home() {
           </div>
 
           {sent ? (
-            <div className="border border-stone-800 p-8 text-center">
+            <div className="p-8 text-center" style={{ border: "1px solid #e0d5c5" }}>
               <p
-                className="text-amber-600 text-xs tracking-widest uppercase mb-3"
-                style={{ fontFamily: "var(--font-inter)" }}
+                className="text-xs tracking-widest uppercase mb-3"
+                style={{ fontFamily: "var(--font-inter)", color: "#7c5c2e" }}
               >
                 Sendt
               </p>
               <p
-                className="text-stone-300 text-2xl"
-                style={{ fontFamily: "var(--font-playfair)" }}
+                className="text-2xl"
+                style={{ fontFamily: "var(--font-playfair)", color: "#2c2318" }}
               >
                 Takk for meldingen!
               </p>
               <p
-                className="text-stone-500 text-sm mt-2"
-                style={{ fontFamily: "var(--font-inter)", fontWeight: 300 }}
+                className="text-sm mt-2"
+                style={{ fontFamily: "var(--font-inter)", fontWeight: 300, color: "#b09878" }}
               >
                 Vi tar kontakt så snart som mulig.
               </p>
@@ -398,8 +422,8 @@ export default function Home() {
                     required
                     value={formData[id as keyof typeof formData]}
                     onChange={(e) => setFormData({ ...formData, [id]: e.target.value })}
-                    className="w-full bg-stone-900 border border-stone-800 focus:border-stone-600 outline-none px-4 py-3 text-stone-200 text-sm transition-colors duration-200"
-                    style={{ fontFamily: "var(--font-inter)" }}
+                    className="w-full outline-none px-4 py-3 text-sm transition-colors duration-200"
+                    style={{ fontFamily: "var(--font-inter)", backgroundColor: "#f0e9de", border: "1px solid #e0d5c5", color: "#2c2318" }}
                     placeholder={placeholder}
                   />
                 </div>
@@ -416,8 +440,8 @@ export default function Home() {
                   rows={5}
                   value={formData.melding}
                   onChange={(e) => setFormData({ ...formData, melding: e.target.value })}
-                  className="w-full bg-stone-900 border border-stone-800 focus:border-stone-600 outline-none px-4 py-3 text-stone-200 text-sm transition-colors duration-200 resize-none"
-                  style={{ fontFamily: "var(--font-inter)" }}
+                  className="w-full outline-none px-4 py-3 text-sm transition-colors duration-200 resize-none"
+                  style={{ fontFamily: "var(--font-inter)", backgroundColor: "#f0e9de", border: "1px solid #e0d5c5", color: "#2c2318" }}
                   placeholder="Hva vil du si?"
                 />
               </div>
@@ -434,10 +458,10 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-stone-900 px-6 py-8 text-center">
+      <footer className="px-6 py-8 text-center" style={{ borderTop: "1px solid #e0d5c5" }}>
         <p
-          className="text-stone-700 text-xs tracking-widest uppercase"
-          style={{ fontFamily: "var(--font-inter)" }}
+          className="text-xs tracking-widest uppercase"
+          style={{ fontFamily: "var(--font-inter)", color: "#b09878" }}
         >
           © {new Date().getFullYear()} Marinader — Håndverk i hver dråpe
         </p>
