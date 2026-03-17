@@ -1,3 +1,5 @@
+"use client";
+
 export default function OmOss() {
   return (
     <main className="min-h-screen" style={{ backgroundColor: "#faf6ef" }}>
@@ -77,11 +79,14 @@ export default function OmOss() {
           </div>
         </div>
 
-        {/* Blokk 2: Stort bilde full bredde */}
+        {/* Blokk 2: Video full bredde */}
         <div className="w-full aspect-[16/7] overflow-hidden mb-24">
-          <img
-            src="/Foto/fishandchips.jpg"
-            alt="Fish and chips"
+          <video
+            src="/Video/Fiskedisk.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
             className="w-full h-full object-cover"
           />
         </div>
