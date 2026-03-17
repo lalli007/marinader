@@ -1,6 +1,17 @@
 "use client";
 
+import { useRef, useState } from "react";
+
 export default function OmOss() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  function handlePlay() {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setPlaying(true);
+    }
+  }
   return (
     <main className="min-h-screen" style={{ backgroundColor: "#faf6ef" }}>
 
@@ -80,18 +91,29 @@ export default function OmOss() {
         </div>
 
         {/* Blokk 2: Video full bredde */}
-        <div className="w-full overflow-hidden mb-24" style={{ height: "clamp(220px, 44vw, 600px)" }}>
+        <div className="relative w-full overflow-hidden mb-24" style={{ height: "clamp(220px, 44vw, 600px)" }}>
           <video
+            ref={videoRef}
             src="/Video/Fiskedisk.mp4"
-            autoPlay
-            muted
             loop
             playsInline
             preload="auto"
             poster="/Foto/fisk-trebrett.JPG"
-            className="w-full object-cover"
-            style={{ width: "100%", height: "100%", display: "block" }}
+            style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
           />
+          {!playing && (
+            <button
+              onClick={handlePlay}
+              className="absolute inset-0 flex items-center justify-center w-full h-full"
+              style={{ background: "rgba(0,0,0,0.15)" }}
+            >
+              <div className="flex items-center justify-center w-16 h-16 rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.85)" }}>
+                <svg className="w-6 h-6 ml-1" fill="#2c2318" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </button>
+          )}
         </div>
 
         {/* Blokk 3: Bilde venstre, tekst høyre */}
