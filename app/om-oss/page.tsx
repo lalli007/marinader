@@ -97,7 +97,7 @@ export default function OmOss() {
             src="/Video/Fiskedisk.mp4"
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
           />
           {!playing && (
