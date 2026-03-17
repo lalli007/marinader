@@ -1,10 +1,18 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function OmOss() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const showFrame = () => { video.currentTime = 0.1; };
+    video.addEventListener("loadedmetadata", showFrame);
+    return () => video.removeEventListener("loadedmetadata", showFrame);
+  }, []);
 
   function handlePlay() {
     if (videoRef.current) {
