@@ -80,7 +80,7 @@ export default function OmOss() {
         </div>
 
         {/* Blokk 2: Video full bredde */}
-        <div className="w-full aspect-[16/7] overflow-hidden mb-24">
+        <div className="w-full overflow-hidden mb-24" style={{ height: "clamp(220px, 44vw, 600px)" }}>
           <video
             src="/Video/Fiskedisk.mp4"
             autoPlay
