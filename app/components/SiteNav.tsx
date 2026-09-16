@@ -15,7 +15,7 @@ export default function SiteNav() {
       <a
         href="/"
         className="text-lg tracking-tight"
-        style={{ color: "var(--ink)", fontFamily: "var(--font-marine-sikona)", fontFeatureSettings: "'liga' 1" }}
+        style={{ color: "#4A4A4A", fontFamily: "var(--font-marine-sikona)", fontFeatureSettings: "'liga' 1" }}
       >
         Marinadehuset
       </a>
@@ -25,9 +25,9 @@ export default function SiteNav() {
             key={label}
             href={href}
             className="text-lg transition-colors duration-200"
-            style={{ color: "#ffffff", fontFamily: "var(--font-satoshi)", fontWeight: 700 }}
+            style={{ color: "#4A4A4A", fontFamily: "var(--font-satoshi)", fontWeight: 700 }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#ffffff")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#4A4A4A")}
           >
             {label}
           </a>

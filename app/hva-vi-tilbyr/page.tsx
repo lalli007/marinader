@@ -32,14 +32,14 @@ const reviews = [
 
 export default function HvaViTilbyr() {
   return (
-    <main className="min-h-screen" style={{ backgroundColor: "var(--paper)", backgroundImage: "url('/Foto/washi-tekstur-tile.png')", backgroundRepeat: "repeat" }}>
+    <main className="min-h-screen" style={{ backgroundColor: "#FFF5F5" }}>
       <SiteNav />
 
       {/* ── INTRO ── */}
       <section className="px-6 pt-32 pb-4 max-w-3xl mx-auto text-center">
         <p
           className="text-base leading-relaxed"
-          style={{ fontFamily: "var(--font-playfair)", fontWeight: 300, color: "var(--ink-soft)" }}
+          style={{ fontFamily: "var(--font-syne)", fontWeight: 400, color: "#4A4A4A" }}
         >
           Etter ni år, tusenvis av kunder og tre avdelinger ga oss noe man ikke kan lese seg til: vi vet hva som fungerer. Marinadene ble raskt blant butikkens bestselgere og vi hjelper deg med alt du trenger, fra oppsett, gode triks, oppskrifter og anbefalinger.
         </p>
@@ -65,7 +65,7 @@ export default function HvaViTilbyr() {
             </div>
           </div>
           <div className="space-y-6">
-            <p className="text-base leading-relaxed" style={{ fontFamily: "var(--font-playfair)", fontWeight: 200, color: "var(--ink-soft)" }}>
+            <p className="text-base leading-relaxed" style={{ fontFamily: "var(--font-syne)", fontWeight: 400, color: "#4A4A4A" }}>
               Konseptene våres høstet svært gode kundeomtaler. Gjennom erfaring har de utviklet en tydelig forståelse av hvilke smaker som treffer markedet, hva norske kunder ønsker seg både som enkeltretter og større selskaper.
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function HvaViTilbyr() {
       <section className="px-6 py-24 max-w-5xl mx-auto">
         <h2
           className="text-center mb-16"
-          style={{ fontFamily: "var(--font-playfair)", fontWeight: 300, fontStyle: "italic", fontSize: "clamp(28px, 4vw, 40px)", color: "var(--ink)" }}
+          style={{ fontFamily: "var(--font-playfair)", fontWeight: 300, fontStyle: "italic", fontSize: "clamp(28px, 4vw, 40px)", color: "#4A4A4A" }}
         >
           Hva vi tilbyr
         </h2>
@@ -105,8 +105,8 @@ export default function HvaViTilbyr() {
           ].map((p) => (
             <div key={p.idx}>
               <p className="text-sm mb-3" style={{ fontFamily: "var(--font-playfair)", fontStyle: "italic", color: "var(--gold)" }}>{p.idx}</p>
-              <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "var(--font-inter)", color: "var(--ink)" }}>{p.title}</h3>
-              <p className="text-sm leading-relaxed" style={{ fontFamily: "var(--font-playfair)", fontWeight: 200, color: "var(--ink-soft)" }}>{p.body}</p>
+              <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "var(--font-inter)", color: "#4A4A4A" }}>{p.title}</h3>
+              <p className="text-sm leading-relaxed" style={{ fontFamily: "var(--font-syne)", fontWeight: 400, color: "#4A4A4A" }}>{p.body}</p>
             </div>
           ))}
         </div>
@@ -121,7 +121,7 @@ export default function HvaViTilbyr() {
       <section className="px-6 py-24 max-w-5xl mx-auto">
         <h2
           className="text-center mb-2"
-          style={{ fontFamily: "var(--font-playfair)", fontWeight: 300, fontStyle: "italic", fontSize: "clamp(28px, 4vw, 40px)", color: "var(--ink)" }}
+          style={{ fontFamily: "var(--font-playfair)", fontWeight: 300, fontStyle: "italic", fontSize: "clamp(28px, 4vw, 40px)", color: "#4A4A4A" }}
         >
           Hva kundene sier
         </h2>
@@ -136,26 +136,26 @@ export default function HvaViTilbyr() {
             <div
               key={review.name}
               className="p-6"
-              style={{ border: "1px solid var(--gold-line)", backgroundColor: "var(--paper-2)" }}
+              style={{ border: "1px solid var(--gold-line)", backgroundColor: "#ffffff" }}
             >
               <div className="mb-3" style={{ color: "var(--gold)", letterSpacing: "0.1em" }}>
                 {"★".repeat(review.rating)}
               </div>
               <p
                 className="text-sm leading-relaxed mb-4"
-                style={{ fontFamily: "var(--font-playfair)", fontWeight: 300, color: "var(--ink)" }}
+                style={{ fontFamily: "var(--font-syne)", fontWeight: 400, color: "#4A4A4A" }}
               >
                 {review.text}
               </p>
               <p
                 className="text-sm"
-                style={{ fontFamily: "var(--font-inter)", fontWeight: 500, color: "var(--ink)" }}
+                style={{ fontFamily: "var(--font-inter)", fontWeight: 500, color: "#4A4A4A" }}
               >
                 {review.name}
               </p>
               <p
                 className="text-xs mt-1"
-                style={{ fontFamily: "var(--font-inter)", color: "var(--ink-soft)" }}
+                style={{ fontFamily: "var(--font-inter)", color: "#4A4A4A" }}
               >
                 {review.source}
               </p>
@@ -165,7 +165,7 @@ export default function HvaViTilbyr() {
       </section>
 
       {/* ── CTA ── */}
-      <div className="px-6 py-20 text-center" style={{ backgroundColor: "var(--pine)" }}>
+      <div className="px-6 py-20 text-center" style={{ backgroundColor: "#8C2F45" }}>
         <p
           className="mx-auto mb-8"
           style={{
@@ -174,7 +174,7 @@ export default function HvaViTilbyr() {
             fontStyle: "italic",
             fontSize: "clamp(22px, 3.5vw, 30px)",
             maxWidth: "480px",
-            color: "var(--paper)",
+            color: "#ffffff",
           }}
         >
           Vil du ha den samme historien bak din egen disk?
@@ -182,7 +182,7 @@ export default function HvaViTilbyr() {
         <a
           href="/kontakt"
           className="inline-block px-8 py-3 text-sm tracking-wide transition-colors duration-200"
-          style={{ fontFamily: "var(--font-inter)", border: "1px solid var(--gold)", color: "var(--paper)" }}
+          style={{ fontFamily: "var(--font-inter)", border: "1px solid var(--gold)", color: "#ffffff" }}
         >
           Ta kontakt
         </a>

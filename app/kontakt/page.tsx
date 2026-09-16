@@ -3,7 +3,7 @@ import SiteFooter from "../components/SiteFooter";
 
 export default function Kontakt() {
   return (
-    <main className="min-h-screen" style={{ backgroundColor: "var(--paper)", backgroundImage: "url('/Foto/washi-tekstur-tile.png')", backgroundRepeat: "repeat" }}>
+    <main className="min-h-screen" style={{ backgroundColor: "#FFF5F5" }}>
       <SiteNav />
 
       <section className="px-6 pt-32 pb-24 max-w-4xl mx-auto">
@@ -20,13 +20,13 @@ export default function Kontakt() {
           </div>
           <h2
             className="mb-4"
-            style={{ fontFamily: "var(--font-playfair)", fontWeight: 300, fontSize: "clamp(28px, 4vw, 44px)", color: "var(--ink)" }}
+            style={{ fontFamily: "var(--font-playfair)", fontWeight: 300, fontSize: "clamp(28px, 4vw, 44px)", color: "#4A4A4A" }}
           >
             Spørsmål om grossistordre eller samarbeid?
           </h2>
           <p
             className="text-base max-w-md mx-auto"
-            style={{ fontFamily: "var(--font-playfair)", fontWeight: 200, color: "var(--ink-soft)" }}
+            style={{ fontFamily: "var(--font-playfair)", fontWeight: 200, color: "#4A4A4A" }}
           >
             Vi hører gjerne fra deg.
           </p>
@@ -47,7 +47,7 @@ export default function Kontakt() {
               </p>
               <p
                 className="whitespace-pre-line"
-                style={{ fontFamily: "var(--font-inter)", color: "var(--ink)" }}
+                style={{ fontFamily: "var(--font-inter)", color: "#4A4A4A" }}
               >
                 {value}
               </p>
@@ -56,7 +56,7 @@ export default function Kontakt() {
           <div className="pt-4" style={{ borderTop: "1px solid var(--gold-line)" }}>
             <p
               className="text-sm leading-relaxed"
-              style={{ fontFamily: "var(--font-playfair)", fontWeight: 200, color: "var(--ink-soft)" }}
+              style={{ fontFamily: "var(--font-playfair)", fontWeight: 200, color: "#4A4A4A" }}
             >
               Vi svarer normalt innen én virkedag.
             </p>
