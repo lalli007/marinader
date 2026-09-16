@@ -56,10 +56,7 @@ export default function HvaViTilbyr() {
           </div>
           <div className="space-y-6">
             <p className="text-base leading-relaxed" style={{ fontFamily: "var(--font-playfair)", fontWeight: 200, color: "var(--ink-soft)" }}>
-              Med elleve års erfaring i bransjen vet vi hva som fungerer. Marinadene ble raskt blant butikkens bestselgere, og konseptet høstet svært gode kundeomtaler.
-            </p>
-            <p className="text-base leading-relaxed" style={{ fontFamily: "var(--font-playfair)", fontWeight: 200, color: "var(--ink-soft)" }}>
-              Gjennom erfaring har de utviklet en tydelig forståelse av hvilke smaker som treffer markedet, hva norske kunder ønsker seg både som enkeltretter og større selskaper.
+              Konseptene våres høstet svært gode kundeomtaler. Gjennom erfaring har de utviklet en tydelig forståelse av hvilke smaker som treffer markedet, hva norske kunder ønsker seg både som enkeltretter og større selskaper.
             </p>
           </div>
         </div>
@@ -156,6 +153,30 @@ export default function HvaViTilbyr() {
           ))}
         </div>
       </section>
+
+      {/* ── CTA ── */}
+      <div className="px-6 py-20 text-center" style={{ backgroundColor: "var(--pine)" }}>
+        <p
+          className="mx-auto mb-8"
+          style={{
+            fontFamily: "var(--font-playfair)",
+            fontWeight: 300,
+            fontStyle: "italic",
+            fontSize: "clamp(22px, 3.5vw, 30px)",
+            maxWidth: "480px",
+            color: "var(--paper)",
+          }}
+        >
+          Vil du ha den samme historien bak din egen disk?
+        </p>
+        <a
+          href="/kontakt"
+          className="inline-block px-8 py-3 text-sm tracking-wide transition-colors duration-200"
+          style={{ fontFamily: "var(--font-inter)", border: "1px solid var(--gold)", color: "var(--paper)" }}
+        >
+          Ta kontakt
+        </a>
+      </div>
 
       <SiteFooter />
     </main>
