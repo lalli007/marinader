@@ -6,24 +6,24 @@ export default function Home() {
     >
       <a
         href="/historien"
-        className="fixed top-6 left-6 md:top-8 md:left-8 text-sm transition-colors duration-200"
-        style={{ color: "var(--ink-soft)", fontFamily: "var(--font-satoshi)" }}
+        className="fixed top-6 left-6 md:top-8 md:left-8 text-base md:text-lg transition-colors duration-200"
+        style={{ color: "#ffffff", fontFamily: "var(--font-satoshi)", fontWeight: 700 }}
       >
         Historien
       </a>
 
       <a
         href="/hva-vi-tilbyr"
-        className="fixed top-6 right-6 md:top-8 md:right-8 text-sm transition-colors duration-200"
-        style={{ color: "var(--ink-soft)", fontFamily: "var(--font-satoshi)" }}
+        className="fixed top-6 right-6 md:top-8 md:right-8 text-base md:text-lg transition-colors duration-200"
+        style={{ color: "#ffffff", fontFamily: "var(--font-satoshi)", fontWeight: 700 }}
       >
         Hva vi tilbyr
       </a>
 
       <a
         href="/kontakt"
-        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 text-sm transition-colors duration-200"
-        style={{ color: "var(--ink-soft)", fontFamily: "var(--font-satoshi)" }}
+        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 text-base md:text-lg transition-colors duration-200"
+        style={{ color: "#ffffff", fontFamily: "var(--font-satoshi)", fontWeight: 700 }}
       >
         Kontakt
       </a>

@@ -24,10 +24,10 @@ export default function SiteNav() {
           <a
             key={label}
             href={href}
-            className="text-sm transition-colors duration-200"
-            style={{ color: "var(--ink-soft)", fontFamily: "var(--font-satoshi)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--ink-soft)")}
+            className="text-lg transition-colors duration-200"
+            style={{ color: "#ffffff", fontFamily: "var(--font-satoshi)", fontWeight: 700 }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#ffffff")}
           >
             {label}
           </a>
