@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Public_Sans, Piazzolla, Newsreader, Inter } from "next/font/google";
+import { Fraunces, Public_Sans, Piazzolla, Newsreader, Inter, Syne } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -52,10 +52,16 @@ const marineSikona = localFont({
   variable: "--font-marine-sikona",
 });
 
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
+});
+
 export const metadata: Metadata = {
-  title: "Marinader for fisk og kjøtt — Elleve år med erfaring",
+  title: "Marinader for fisk og kjøtt — Ni år med erfaring",
   description:
-    "Marinader for fisk, kjøtt og sjømat fra Fiskehuset på Kolbotn — elleve års erfaring med marinadekonsentrater for dagligvare, restaurant og catering.",
+    "Marinader for fisk, kjøtt og sjømat fra Fiskehuset på Kolbotn — ni års erfaring med marinadekonsentrater for dagligvare, restaurant og catering.",
 };
 
 const localBusinessSchema = {
@@ -63,7 +69,7 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   name: "Marinadehuset",
   description:
-    "Marinader for fisk, kjøtt og sjømat, utviklet av Fiskehuset på Kolbotn. Elleve års erfaring med marinadekonsentrater for dagligvare, restaurant og catering.",
+    "Marinader for fisk, kjøtt og sjømat, utviklet av Fiskehuset på Kolbotn. Ni års erfaring med marinadekonsentrater for dagligvare, restaurant og catering.",
   email: "hei@marinader.no",
   telephone: "+47 123 45 678",
   address: {
@@ -88,7 +94,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className={`${fraunces.variable} ${publicSans.variable} ${satoshi.variable} ${piazzolla.variable} ${newsreader.variable} ${marineSikona.variable} ${inter.variable} antialiased`}>
+      <body className={`${fraunces.variable} ${publicSans.variable} ${satoshi.variable} ${piazzolla.variable} ${newsreader.variable} ${marineSikona.variable} ${inter.variable} ${syne.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -35,8 +35,18 @@ export default function HvaViTilbyr() {
     <main className="min-h-screen" style={{ backgroundColor: "var(--paper)", backgroundImage: "url('/Foto/washi-tekstur-tile.png')", backgroundRepeat: "repeat" }}>
       <SiteNav />
 
+      {/* ── INTRO ── */}
+      <section className="px-6 pt-32 pb-4 max-w-3xl mx-auto text-center">
+        <p
+          className="text-base leading-relaxed"
+          style={{ fontFamily: "var(--font-playfair)", fontWeight: 300, color: "var(--ink-soft)" }}
+        >
+          Etter ni år, tusenvis av kunder og tre avdelinger ga oss noe man ikke kan lese seg til: vi vet hva som fungerer. Marinadene ble raskt blant butikkens bestselgere og vi hjelper deg med alt du trenger, fra oppsett, gode triks, oppskrifter og anbefalinger.
+        </p>
+      </section>
+
       {/* ── PRESSE / SOSIALT BEVIS ── */}
-      <section className="px-6 pt-32 pb-24 max-w-6xl mx-auto">
+      <section className="px-6 py-24 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-4">
           <div className="grid grid-cols-3 gap-4">
             <div className="aspect-[3/4] overflow-hidden">
@@ -80,7 +90,7 @@ export default function HvaViTilbyr() {
             {
               idx: "Én",
               title: "Erfaringen",
-              body: "Elleve års erfaring, testet og videreutviklet i flere butikker.",
+              body: "Ni års erfaring, testet og videreutviklet i flere butikker.",
             },
             {
               idx: "To",

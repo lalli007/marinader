@@ -15,7 +15,7 @@ export default function SiteNav() {
       <a
         href="/"
         className="text-lg tracking-tight"
-        style={{ color: "var(--ink)", fontFamily: "var(--font-marine-sikona)" }}
+        style={{ color: "var(--ink)", fontFamily: "var(--font-marine-sikona)", fontFeatureSettings: "'liga' 1" }}
       >
         Marinadehuset
       </a>
