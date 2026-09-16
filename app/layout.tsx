@@ -1,6 +1,41 @@
 import type { Metadata } from "next";
+import { Fraunces, Public_Sans, Piazzolla, Newsreader, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: "variable",
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  variable: "--font-fraunces",
+});
+
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-public-sans",
+});
+
+const piazzolla = Piazzolla({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-piazzolla",
+});
+
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-newsreader",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700"],
+  variable: "--font-inter-google",
+});
 
 const satoshi = localFont({
   src: [
@@ -12,10 +47,32 @@ const satoshi = localFont({
   variable: "--font-satoshi",
 });
 
+const marineSikona = localFont({
+  src: "../public/fonts/MarineSikona-Regular.otf",
+  variable: "--font-marine-sikona",
+});
+
 export const metadata: Metadata = {
-  title: "Marinader — Håndverk i hver dråpe",
+  title: "Marinader for fisk og kjøtt — Elleve år med erfaring",
   description:
-    "Ni unike marinader laget for å løfte smaken av fisk og kjøtt til nye høyder.",
+    "Marinader for fisk, kjøtt og sjømat fra Fiskehuset på Kolbotn — elleve års erfaring med marinadekonsentrater for dagligvare, restaurant og catering.",
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Marinadehuset",
+  description:
+    "Marinader for fisk, kjøtt og sjømat, utviklet av Fiskehuset på Kolbotn. Elleve års erfaring med marinadekonsentrater for dagligvare, restaurant og catering.",
+  email: "hei@marinader.no",
+  telephone: "+47 123 45 678",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Matverkstedet 12",
+    postalCode: "0150",
+    addressLocality: "Oslo",
+    addressCountry: "NO",
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +82,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no">
-      <body className={`${satoshi.variable} antialiased bg-stone-950 text-stone-100`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
+      <body className={`${fraunces.variable} ${publicSans.variable} ${satoshi.variable} ${piazzolla.variable} ${newsreader.variable} ${marineSikona.variable} ${inter.variable} antialiased`}>
         {children}
       </body>
     </html>

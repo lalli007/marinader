@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --font-playfair: var(--font-satoshi), sans-serif;
-  --font-inter: var(--font-satoshi), sans-serif;
+  --paper: #f4eee1;
+  --paper-2: #efe7d6;
+  --ink: #241f1a;
+  --ink-soft: #5b5044;
+  --pine: #1f3a30;
+  --pine-soft: #3b5c4e;
+  --gold: #ad8a52;
+  --gold-line: #d9c79c;
+  --rust: #9c5236;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #191712;
+    --paper-2: #211e18;
+    --ink: #f0ead9;
+    --ink-soft: #c6bca6;
+    --pine: #bfdacb;
+    --pine-soft: #8fae9c;
+    --gold: #d9be86;
+    --gold-line: #4a4030;
+    --rust: #d08363;
+  }
 }
 
 * {
@@ -14,11 +35,17 @@ html {
 }
 
 body {
-  background: #0c0a09;
-  color: #f5f0eb;
+  --font-playfair: var(--font-fraunces), serif;
+  --font-inter: var(--font-inter-google), sans-serif;
+
+  background-color: var(--paper);
+  background-image: url('/Foto/washi-tekstur-tile.png');
+  background-repeat: repeat;
+  color: var(--ink);
   font-family: var(--font-inter);
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-playfair);
+  font-variation-settings: "opsz" 144;
 }
