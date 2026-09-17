@@ -35,53 +35,11 @@ export default function HvaViTilbyr() {
     <main className="min-h-screen" style={{ backgroundColor: "#FFF5F5" }}>
       <SiteNav />
 
-      {/* ── INTRO ── */}
-      <section className="px-6 pt-32 pb-4 max-w-3xl mx-auto text-center">
-        <p
-          className="text-base leading-relaxed"
-          style={{ fontFamily: "var(--font-syne)", fontWeight: 400, color: "#4A4A4A" }}
-        >
-          Etter ni år, tusenvis av kunder og tre avdelinger ga oss noe man ikke kan lese seg til: vi vet hva som fungerer. Marinadene ble raskt blant butikkens bestselgere og vi hjelper deg med alt du trenger, fra oppsett, gode triks, oppskrifter og anbefalinger.
-        </p>
-      </section>
-
-      {/* ── PRESSE / SOSIALT BEVIS ── */}
-      <section className="px-6 py-24 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-4">
-          <div className="grid grid-cols-3 gap-4">
-            <div className="aspect-[3/4] overflow-hidden">
-              <img src="/Foto/141571241_2876011515987383_8014545428177150836_n.jpg" alt="Marinert fisk fra Fiskehuset på Kolbotn" className="w-full h-full object-cover" />
-            </div>
-            <div className="aspect-[3/4] overflow-hidden">
-              <img src="/Foto/155286866_2903573623231172_5634928572481263402_n.jpg" alt="Fiskehusets butikk med marinader for fisk og kjøtt" className="w-full h-full object-cover" />
-            </div>
-            <div className="aspect-[3/4] grid grid-rows-2 gap-4">
-              <div className="overflow-hidden">
-                <img src="/Foto/avis-fiskehuset.jpg" alt="Avisomtale om Fiskehusets marinader" className="w-full h-full object-cover" />
-              </div>
-              <div className="overflow-hidden">
-                <img src="/Foto/poteter i marinader.jpg" alt="Poteter marinert i Fiskehusets marinade" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
-          <div className="space-y-6">
-            <p className="text-base leading-relaxed" style={{ fontFamily: "var(--font-syne)", fontWeight: 400, color: "#4A4A4A" }}>
-              Konseptene våres høstet svært gode kundeomtaler. Gjennom erfaring har de utviklet en tydelig forståelse av hvilke smaker som treffer markedet, hva norske kunder ønsker seg både som enkeltretter og større selskaper.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── DIVIDER ── */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px" style={{ background: "linear-gradient(to right, transparent, var(--gold-line), transparent)" }} />
-      </div>
-
       {/* ── HVA VI TILBYR ── */}
-      <section className="px-6 py-24 max-w-5xl mx-auto">
+      <section className="px-6 pt-32 pb-24 max-w-5xl mx-auto">
         <h2
           className="text-center mb-16"
-          style={{ fontFamily: "var(--font-playfair)", fontWeight: 300, fontStyle: "italic", fontSize: "clamp(28px, 4vw, 40px)", color: "#4A4A4A" }}
+          style={{ fontFamily: "var(--font-marine-sikona)", fontFeatureSettings: "'liga' 1", fontStyle: "normal", fontSize: "clamp(28px, 4vw, 40px)", color: "#4A4A4A" }}
         >
           Hva vi tilbyr
         </h2>
@@ -94,17 +52,17 @@ export default function HvaViTilbyr() {
             },
             {
               idx: "To",
-              title: "Oppsettstøtte",
-              body: "Vi viser hvordan vi bygde disken vår, og hjelper deg med det samme hos deg.",
+              title: "Velprøvde marinader",
+              body: "Vi har marinadene, og vet nøyaktig hvordan å blande og hvilke som selger best.",
             },
             {
               idx: "Tre",
-              title: "Velprøvde marinader",
-              body: "Vi har marinadene, og vet nøyaktig hvilke som selger best.",
+              title: "Oppsettstøtte",
+              body: "Vi viser hvordan vi bygde disken vår, og hjelper deg med det samme hos deg.",
             },
           ].map((p) => (
             <div key={p.idx}>
-              <p className="text-sm mb-3" style={{ fontFamily: "var(--font-playfair)", fontStyle: "italic", color: "var(--gold)" }}>{p.idx}</p>
+              <p className="text-sm mb-3" style={{ fontFamily: "var(--font-marine-sikona)", fontFeatureSettings: "'liga' 1", color: "var(--gold)" }}>{p.idx}</p>
               <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "var(--font-inter)", color: "#4A4A4A" }}>{p.title}</h3>
               <p className="text-sm leading-relaxed" style={{ fontFamily: "var(--font-syne)", fontWeight: 400, color: "#4A4A4A" }}>{p.body}</p>
             </div>
@@ -117,17 +75,52 @@ export default function HvaViTilbyr() {
         <div className="h-px" style={{ background: "linear-gradient(to right, transparent, var(--gold-line), transparent)" }} />
       </div>
 
+      {/* ── INTRO ── */}
+      <section className="px-6 pt-16 pb-5 max-w-2xl mx-auto text-left">
+        <p
+          className="text-base leading-relaxed"
+          style={{ fontFamily: "var(--font-syne)", fontWeight: 400, color: "#4A4A4A" }}
+        >
+          Etter ni år, tusenvis av kunder og tre avdelinger ga oss noe man ikke kan lese seg til: vi vet hva som fungerer. Marinadene ble raskt blant butikkens bestselgere og vi hjelper deg med alt du trenger, fra oppsett, gode triks, oppskrifter og anbefalinger. Konseptene våres høstet svært gode kundeomtaler. Gjennom erfaring har de utviklet en tydelig forståelse av hvilke smaker som treffer markedet, hva norske kunder ønsker seg både som enkeltretter og større selskaper.
+        </p>
+      </section>
+
+      {/* ── PRESSE / SOSIALT BEVIS ── */}
+      <section className="px-6 pt-5 pb-24 max-w-2xl mx-auto text-center">
+        <div className="grid grid-cols-3 gap-4">
+          <div className="aspect-[3/4] overflow-hidden">
+            <img src="/Foto/141571241_2876011515987383_8014545428177150836_n.jpg" alt="Marinert fisk fra Fiskehuset på Kolbotn" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[3/4] overflow-hidden">
+            <img src="/Foto/155286866_2903573623231172_5634928572481263402_n.jpg" alt="Fiskehusets butikk med marinader for fisk og kjøtt" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[3/4] grid grid-rows-2 gap-4">
+            <div className="overflow-hidden">
+              <img src="/Foto/avis-fiskehuset.jpg" alt="Avisomtale om Fiskehusets marinader" className="w-full h-full object-cover" />
+            </div>
+            <div className="overflow-hidden">
+              <img src="/Foto/poteter i marinader.jpg" alt="Poteter marinert i Fiskehusets marinade" className="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── DIVIDER ── */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px" style={{ background: "linear-gradient(to right, transparent, var(--gold-line), transparent)" }} />
+      </div>
+
       {/* ── KUNDEOMTALER ── */}
       <section className="px-6 py-24 max-w-5xl mx-auto">
         <h2
           className="text-center mb-2"
-          style={{ fontFamily: "var(--font-playfair)", fontWeight: 300, fontStyle: "italic", fontSize: "clamp(28px, 4vw, 40px)", color: "#4A4A4A" }}
+          style={{ fontFamily: "var(--font-marine-sikona)", fontFeatureSettings: "'liga' 1", fontStyle: "normal", fontSize: "clamp(28px, 4vw, 40px)", color: "#4A4A4A" }}
         >
           Hva kundene sier
         </h2>
         <p
           className="text-center text-xs tracking-[0.2em] uppercase mb-16"
-          style={{ fontFamily: "var(--font-inter)", color: "var(--rust)" }}
+          style={{ fontFamily: "var(--font-marine-sikona)", fontFeatureSettings: "'liga' 1", color: "var(--rust)" }}
         >
           Fra Fiskehuset Kolbotn
         </p>

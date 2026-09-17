@@ -7,7 +7,7 @@ export default function Historien() {
       <SiteNav />
 
       {/* ── OPPRINNELSEN ── */}
-      <section className="px-6 pt-32 pb-16 max-w-3xl mx-auto">
+      <section className="px-6 pt-32 pb-16 max-w-md mx-auto">
         <h2
           className="text-2xl mb-6"
           style={{ fontFamily: "var(--font-playfair)", fontWeight: 700, color: "#4A4A4A" }}
@@ -21,7 +21,7 @@ export default function Historien() {
           Med den erfaringen har vi nå startet et nytt selskap for å tilby marinadene til deg. Marinadene er laget for å fremheve råvarene og skape gode måltider, både til hverdags og spesielle anledninger.
         </p>
 
-        <div className="mt-10 overflow-hidden rounded-sm">
+        <div className="mt-10 overflow-hidden rounded-xl">
           <img
             src="/Foto/avis-fiskehuset2.jpg"
             alt="Avisomtale: Fiskelykke på Kolbotn"
@@ -31,7 +31,7 @@ export default function Historien() {
       </section>
 
       {/* ── VENDEPUNKTET ── */}
-      <section className="px-6 pb-16 max-w-3xl mx-auto">
+      <section className="px-6 pb-16 max-w-md mx-auto">
         <h2
           className="text-2xl mb-6"
           style={{ fontFamily: "var(--font-playfair)", fontWeight: 700, color: "#4A4A4A" }}
